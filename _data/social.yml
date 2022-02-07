@@ -1,9 +1,9 @@
 - title: Email
-  url: zzhc321@126.com
+  url: mailto://zzhc321@126.com
   icon: fas fa-envelope
-- title: Wechat
+- title: Phone
   url: 18936698355
-  icon: fa fa-wechat
+  icon: fa fa-phone
 - title: GitHub
   url: https://github.com/Zzhc3321
   icon: fab fa-github
