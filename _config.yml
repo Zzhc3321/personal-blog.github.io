@@ -2,10 +2,10 @@
 title: 正在缓冲
 description: 正在缓冲的个人博客
 url: #
-avatar: /avatar.jpeg
+avatar: /images/avatar.jpg
 paginate: 5
 permalink: pretty
-cover_image: /bg.jpeg
+cover_image: /images/bg.jpg
 
 # Gems
 plugins:
