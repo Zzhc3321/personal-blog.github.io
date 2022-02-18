@@ -81,7 +81,7 @@ def calculate(s: str) -> int:
             else:
                 num = 0
                 while i < n and s[i].isdigit():
-                    num = num * 10 + ord(s[i]) - ord('0')
+                    num = num * 10 + int(s[i])
                     i += 1
                 ret += num * sign
         return ret
