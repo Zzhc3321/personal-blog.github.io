@@ -98,3 +98,20 @@ def calculate(s: str) -> int:
 
 #### 思路：单调栈（解决陡峭问题）
 
+
+
+```python
+class Solution:
+    def find132pattern(self, nums: List[int]) -> bool:
+        
+        n = len(nums)
+        st = [nums[n-1]]
+        m = float ('-inf')
+        for i in range(n-2,-1,-1):
+            if nums[i]<m:
+                return True
+            while len(st)>0 and nums[i]>st[-1]:
+                m = st.pop()
+            st.append(nums[i])
+        return False
+```
