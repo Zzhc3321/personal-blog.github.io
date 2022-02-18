@@ -98,7 +98,7 @@ def calculate(s: str) -> int:
 
 #### 思路：单调栈（解决陡峭问题）
 
-
+![单调栈](https://gitee.com/zzhc3321/personal-blog-drawing-bed/raw/master/personal-blog/2022_2_18_单调栈.png)
 
 ```python
 class Solution:
