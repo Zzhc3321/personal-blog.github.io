@@ -56,3 +56,33 @@ R[i] 代表的是 i 右侧所有数字的乘积。
 - 与字符串中当前位置的运算符有关；
 - 如果当前位置处于一系列括号之内，则也与这些括号前面的运算符有关：每当遇到一个以号开头的括号，则意味着此后的符号都要被「翻转」。
 
+```python
+def calculate(s: str) -> int:
+        ops = [1]
+        sign = 1
+        ret = 0
+        n = len(s)
+        i = 0
+        while i < n:
+            if s[i] == ' ':
+                i += 1
+            elif s[i] == '+':
+                sign = ops[-1]
+                i += 1
+            elif s[i] == '-':
+                sign = -ops[-1]
+                i += 1
+            elif s[i] == '(':
+                ops.append(sign)
+                i += 1
+            elif s[i] == ')':
+                ops.pop()
+                i += 1
+            else:
+                num = 0
+                while i < n and s[i].isdigit():
+                    num = num * 10 + ord(s[i]) - ord('0')
+                    i += 1
+                ret += num * sign
+        return ret
+```
