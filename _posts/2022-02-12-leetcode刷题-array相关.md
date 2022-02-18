@@ -109,7 +109,7 @@ class Solution:
         for i in range(n-2,-1,-1):
             if nums[i]<m:
                 return True
-            while len(st)>0 and nums[i]>st[-1]: #递减
+            while len(st)>0 and nums[i]>st[-1]: #保持递减
                 m = st.pop()
             st.append(nums[i])
         return False
