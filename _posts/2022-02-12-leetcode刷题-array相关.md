@@ -114,3 +114,71 @@ class Solution:
             st.append(nums[i])
         return False
 ```
+
+***
+<br>
+<br>
+
+### 402.移掉K位数字
+**给你一个以字符串表示的非负整数 num 和一个整数 k ，移除这个数中的 k 位数字，使得剩下的数字最小。请你以字符串形式返回这个最小的数字。**
+
+#### 思路：单调栈
+![单调栈](https://gitee.com/zzhc3321/personal-blog-drawing-bed/raw/master/personal-blog/2022_2_19_1645273260627.png)
+
+我的答案：
+```python
+class Solution:
+    def removeKdigits(self, num: str, k: int) -> str:
+        st = []
+        n = 0
+        done = False
+        if len(num)<=k:
+            return '0'
+
+        for s in num:
+            if len(st)==0:
+                st.append(s)
+                continue
+            while int(s)<int(st[-1]) and not done:
+                st.pop()
+                n+=1
+                if n==k:
+                    done = True
+                if len(st)==0:
+                    break
+            st.append(s)
+
+        while n<k:
+            n+=1
+            st.pop()
+
+        while st[0]=='0':
+            del st[0]
+            if len(st)==0:
+                return '0'
+
+        return ''.join(st)
+
+```
+
+<br>
+官方答案：
+```python
+class Solution:
+    def removeKdigits(self, num: str, k: int) -> str:
+        numStack = []
+        
+        # 构建单调递增的数字串
+        for digit in num:
+            while k and numStack and numStack[-1] > digit:
+                numStack.pop()
+                k -= 1
+        
+            numStack.append(digit)
+        
+        # 如果 K > 0，删除末尾的 K 个字符
+        finalStack = numStack[:-k] if k else numStack
+        
+        # 抹去前导零
+        return "".join(finalStack).lstrip('0') or "0"
+```
