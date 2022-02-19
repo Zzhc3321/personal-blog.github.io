@@ -689,7 +689,7 @@ class MyStack:
 
 <br>
 
-### 题
+### 373. 查找和最小的K对数字
 
 **strong text**
 
