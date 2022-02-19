@@ -182,3 +182,27 @@ class Solution:
         # 抹去前导零
         return "".join(finalStack).lstrip('0') or "0"
 ```
+
+***
+<br>
+
+<br>
+
+###946. 验证栈序列
+**给定 pushed 和 popped 两个序列，每个序列中的值都不重复，只有当它们可能是在最初空栈上进行的推入 push 和弹出 pop 操作序列的结果时，返回 true；否则，返回 false 。**
+
+
+#### 思路：
+```python 
+class Solution(object):
+    def validateStackSequences(self, pushed, popped):
+        j = 0
+        stack = []
+        for x in pushed:
+            stack.append(x)
+            while stack and j < len(popped) and stack[-1] == popped[j]:
+                stack.pop()
+                j += 1
+
+        return j == len(popped)
+```
