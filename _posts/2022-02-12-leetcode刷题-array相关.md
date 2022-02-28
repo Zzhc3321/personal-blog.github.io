@@ -350,7 +350,7 @@ class Solution:
 **strong text**
 
 
-#### 思路
+#### 头插法
 
 
 
