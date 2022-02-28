@@ -380,10 +380,31 @@ class Solution:
 
 ### 287. 寻找重复数
 
-**strong text**
+**一个包含 n + 1 个整数的数组 nums ，其数字都在 [1, n] 范围内（包括 1 和 n），假设 nums 只有 一个重复的整数 ，返回 这个重复的数 。只用常量级 O(1) 的额外空间。**
 
 
-#### 思路
+#### 快慢指针（Floyd 判圈算法）
+
+```python
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        fast = nums[nums[0]]
+        low = nums[0]
+
+        while fast!=low:
+            fast = nums[nums[fast]]
+            low = nums[low]
+
+        low = 0
+
+        while nums[fast]!=nums[low]:
+            fast = nums[fast]
+            low = nums[low]
+        
+        return nums[low]
+```
+
+
 
 
 
