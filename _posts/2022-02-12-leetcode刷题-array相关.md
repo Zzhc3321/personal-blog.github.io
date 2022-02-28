@@ -438,7 +438,29 @@ class Solution:
 
 #### 思路
 
+```python
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        if head.next is None and n==1:
+            return None
 
+        p = ListNode(head.val,head.next)
+        for i in range(n):
+            p = p.next
+        
+        m = ListNode(0,head)
+        cur = m
+
+        if p:
+            cur = cur.next
+            while p.next is not None:
+                cur = cur.next
+                p = p.next
+        
+        cur.next = cur.next.next
+
+        return m.next
+```
 
 
 
