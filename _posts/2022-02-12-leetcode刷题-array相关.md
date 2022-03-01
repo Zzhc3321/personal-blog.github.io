@@ -692,8 +692,6 @@ class Solution:
                 if elm.left is None and elm.right is None:
                     return level
             
-
-
 ```
 
 
@@ -795,8 +793,37 @@ class MedianFinder:
 
 #### 思路
 
-
-
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        if len(lists)==0 or (len(lists)==1 and lists[0]==None):
+            return None
+        res = ListNode()
+        n = len(lists)
+        r = res
+        i_s = [i for i in range(n)]
+        for i in range(n):
+            if lists[i]==None:
+                i_s.remove(i)
+                
+        while i_s:
+            p = i_s[0]
+            for i in i_s:
+                if lists[i].val<lists[p].val:
+                    p = i
+            r.next = lists[p]
+            r = r.next
+            lists[p] = lists[p].next
+            if lists[p]==None:
+                i_s.remove(p)
+        r.next = None
+        return res.next
+```
 
 
 
