@@ -549,11 +549,36 @@ class Solution:
 **strong text**
 
 
-#### 思路
+#### 后序遍历
 
 
 
+```python 
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+ 
+class Solution:
+    res = None
+ 
+    def dfs(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        # 可以使用后序遍历来进行解决
+        if root is None: return False
+        lson = self.dfs(root.left, p, q)
+        rson = self.dfs(root.right, p, q)
+        if (lson and rson) or ((p.val == root.val or q.val == root.val) and (lson or rson)):
+            self.res = root
+        return lson or rson or p.val == root.val or q.val == root.val
+ 
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        self.dfs(root, p, q)
+        return self.res
+        
+```
 
 
 
