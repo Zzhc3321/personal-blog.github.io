@@ -487,8 +487,40 @@ class Solution:
 **strong text**
 
 
-#### 思路
+#### 递归
 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        def p_i_to_tree(root, preor, inor):
+            if preor:
+                root.val = preor[0]
+            else: 
+                root = None
+                return
+            
+            n = len(inor)
+
+            i = 0
+            while i<n and root.val!=inor[i]:
+                i+=1
+
+            if i > 0:
+                root.left = TreeNode(preor[1])
+                p_i_to_tree(root.left, preor[1:i+1],inor[0:i])
+            if i < n-1:
+                root.right = TreeNode(preor[i+1])
+                p_i_to_tree(root.right, preor[i+1:],inor[i+1:])
+            
+        root = TreeNode()
+        p_i_to_tree(root,preorder,inorder)
+
+        return root
 
 
 
