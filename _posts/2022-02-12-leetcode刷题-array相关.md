@@ -615,7 +615,16 @@ class Solution:
 
 #### 思路
 
+```python 
 
+class Solution:
+
+    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+        if p is None or q is None:
+            return p==q
+        return self.isSameTree(p.left,q.left) and p.val==q.val and self.isSameTree(p.right,q.right)
+
+```
 
 
 
