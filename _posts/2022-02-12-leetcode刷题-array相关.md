@@ -663,12 +663,38 @@ class Solution:
 **strong text**
 
 
-#### 思路
+#### 层次遍历
 
 
+```python 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDepth(self, root: TreeNode) -> int:
+        #层次遍历
+        if root is None:
+            return 0
+        st = [root]
+        level = 0
+        while st:
+            level += 1
+            n = len(st)
+            for i in range(n):
+                elm = st.pop(0)
+                if elm.left is not None:
+                    st.append(elm.left)
+                if elm.right is not None:
+                    st.append(elm.right)
+                if elm.left is None and elm.right is None:
+                    return level
+            
 
 
-
+```
 
 
 
