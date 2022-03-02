@@ -866,9 +866,27 @@ class Solution:
 **strong text**
 
 
-#### 思路
+#### 堆
 
+```python
+class Solution:
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        m, n = len(nums1), len(nums2)
 
+        all_elm = [(i+j,i,j) for i in nums1 for j in nums2]
+
+        heapq.heapify(all_elm)
+
+        res = heapq.nsmallest(k,all_elm)
+
+        ans = []
+
+        for elm in res:
+            (_,i,j) = elm
+            ans.append([i,j])
+
+        return ans
+```
 
 
 
