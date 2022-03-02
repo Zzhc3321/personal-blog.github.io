@@ -863,7 +863,7 @@ class Solution:
 
 ### 373. 查找和最小的K对数字
 
-**strong text**
+**给定两个以 升序排列 的整数数组 nums1 和 nums2 , 以及一个整数 k 。定义一对值 (u,v)，其中第一个元素来自 nums1，第二个元素来自 nums2 。请找到和最小的 k 个数对 (u1,v1),  (u2,v2)  ...  (uk,vk) 。**
 
 
 #### 堆
@@ -928,10 +928,34 @@ class Solution:
 **strong text**
 
 
-#### 思路
+#### 堆
 
 
+```python
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        dic = {}
+        for elm in s:
+            if elm in dic:
+                dic[elm] += 1
+            else:
+                dic[elm] = 1
 
+        ans = [(-v,k) for (k,v) in dic.items()]
+
+        heapq.heapify(ans)
+
+        n = len(ans)
+
+        res = ""
+
+        for i in range(n):
+            elm = heapq.heappop(ans)
+            res += elm[1]*(-elm[0])
+
+
+        return res
+```
 
 
 
