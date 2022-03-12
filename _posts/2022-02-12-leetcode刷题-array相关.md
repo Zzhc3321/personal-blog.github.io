@@ -1002,6 +1002,7 @@ class Solution:
  - **假设汽车油箱的容量是无限的，其中最初有 startFuel 升燃料。它每行驶 1英里就会用掉 1 升汽油。**
 
 #### 思路
+1. 动规
 ```python 
 class Solution(object):
     def minRefuelStops(self, target, startFuel, stations):
@@ -1010,13 +1011,36 @@ class Solution(object):
             for t in xrange(i, -1, -1):
                 if dp[t] >= location:
                     dp[t+1] = max(dp[t+1], dp[t] + capacity)
-
         for i, d in enumerate(dp):
             if d >= target: return i
         return -1
 ```
 
+2. 优先队列
 
+```python
+class Solution(object):
+    def minRefuelStops(self, target, tank, stations):
+        pq = []  # A maxheap is simulated using negative values
+        stations.append((target, float('inf')))
+
+        ans = prev = 0
+        for location, capacity in stations:
+            tank -= location - prev
+            while pq and tank < 0:  # must refuel in past
+                tank += -heapq.heappop(pq)
+                ans += 1
+            if tank < 0: return -1
+            heapq.heappush(pq, -capacity)
+            prev = location
+
+        return ans
+
+作者：LeetCode
+链接：https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/solution/zui-di-jia-you-ci-shu-by-leetcode/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+```
 
 
 
