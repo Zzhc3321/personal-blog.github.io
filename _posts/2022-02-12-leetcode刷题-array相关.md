@@ -1037,10 +1037,64 @@ class Solution:
 
 ### 230. 二叉搜索树中第K小的元素
 
-**strong text**
+**给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。**
 
 
-#### 思路
+#### 右子树的最左下角
+```python 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
+        if root is None:
+            return None
+        if root.val==key:
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+
+        def dr_node(pre, root):
+            p = root
+            if p.right is None:
+                if pre.left==p:
+                    pre.left = p.left
+                else:
+                    pre.right = p.left
+
+            elif p.left is None:
+                if pre.left==p:
+                    pre.left = p.right
+                else:pre.right = p.right
+            else:
+                pre = p
+                p=p.right
+                while p.left:
+                    pre = p
+                    p=p.left
+                root.val = p.val
+                dr_node(pre, p)
+
+
+        def inorder(root, key, pre=None):
+            if root is None:
+                return
+            inorder(root.left, key, root)
+
+            if root.val>key:
+                return
+            elif root.val==key:
+                dr_node(pre, root)
+            
+            inorder(root.right, key, root)
+
+        inorder(root, key)
+        return root
+```
 
 
 
