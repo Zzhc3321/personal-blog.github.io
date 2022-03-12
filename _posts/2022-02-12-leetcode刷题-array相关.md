@@ -1076,10 +1076,34 @@ class Solution:
 
 ### 450. 删除二叉搜索树中的节点
 
-**strong text**
+**给定一个二叉搜索树的根节点 root ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。**
 
 
-#### 思路
+#### 中序遍历
+
+```python 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+
+        def in_order(root, res_list):
+            if root is None:
+                return
+            
+            in_order(root.left, res_list)
+            res_list.append(root.val)
+            in_order(root.right, res_list)
+
+        sort_list = []
+        in_order(root, sort_list)
+
+        return sort_list[k-1]
+```
 
 
 
