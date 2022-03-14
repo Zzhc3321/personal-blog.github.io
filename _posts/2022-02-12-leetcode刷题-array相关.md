@@ -1216,7 +1216,20 @@ class Solution:
 #### 思路
 
 
+```python
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        dicts = {}
 
+        for st in strs:
+            key = sorted(st)
+            str_key = ''.join(key)
+            if str_key in list(dicts.keys()):
+                dicts[str_key].append(st)
+            else:
+                dicts[str_key] = [st]
+        return list(dicts.values())
+```
 
 
 
