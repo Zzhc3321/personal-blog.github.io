@@ -1255,98 +1255,45 @@ Graph
 
 ### 785. 判断二分图
 
-**strong text**
-
-
-#### 思路
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-***
-<br>
-
-<br>
-
-***
-Sort
-
-***
-
-### 33. 搜索旋转排序数组
-
-**strong text**
-
-
-#### 思路
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-***
-<br>
-
-<br>
-
-### 81. 搜索旋转排序数组 II
-
-**strong text**
-
-
-#### 思路
-
+**二分图 定义：如果能将一个图的节点集合分割成两个独立的子集A和B，并使图中的每一条边的两个节点一个来自 A 集合，一个来自 B 集合，就将这个图称为 二分图 。如果图是二分图，返回 true ；否则，返回 false 。**
+
+
+#### BFS
+
+```python
+class Solution:
+    def isBipartite(self, graph: List[List[int]]) -> bool:
+        seta = []
+        setb = []
+        n = len(graph)
+        visited = [False for i in range(n)]
+  
+        for i in range(n):
+            if visited[i]:
+                continue
+            else:
+                seta.append(i)
+                q = [i]
+                while q:
+                    elm = q.pop()
+                    if visited[elm]:
+                        continue
+                    visited[elm] = True
+                    if elm in seta:
+                        for i in graph[elm]:
+                            q.append(i)
+                            if i in seta:
+                                return False
+                            setb.append(i)
+                    else:
+                        for i in graph[elm]:
+                            q.append(i)
+                            if i in setb:
+                                print(i)
+                                return False
+                            seta.append(i)
+        return True
+```
 
 
 
@@ -1364,31 +1311,7 @@ Sort
 **strong text**
 
 
-#### 思路
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### 排个序返回
 
 
 
@@ -1404,10 +1327,29 @@ Sort
 
 ### 969. 煎饼排序
 
-**strong text**
+**例如，arr = [3,2,1,4] ，选择 k = 3 进行一次煎饼翻转，反转子数组 [3,2,1] ，得到 arr = [1,2,3,4] 。以数组形式返回能使 arr 有序的煎饼翻转操作所对应的 k 值序列。任何将数组排序且翻转次数在 10xarr length范围内的有效答案都将被判断为正确。** 
 
 
-#### 思路
+#### 每次定位最大的反转到最终位置
+
+```python
+class Solution:
+    def pancakeSort(self, arr: List[int]) -> List[int]:
+        res = []
+        n = len(arr)
+        def fanzhuan(a):
+            return [a[-i-1] for i in range(len(a))]
+        
+        for i in range(n):
+            loc = arr.index(max(arr[:n-i]))
+            if loc!=n-i-1:
+                if loc!=0:
+                    arr[:loc+1] = fanzhuan(arr[:loc+1])
+                    res.append(loc+1)
+                arr[:n-i] = fanzhuan(arr[:n-i])
+                res.append(n-i)
+        return res
+```
 
 
 
