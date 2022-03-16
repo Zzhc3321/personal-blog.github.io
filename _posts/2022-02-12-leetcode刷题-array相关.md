@@ -1450,11 +1450,16 @@ class Solution:
 
 ### 407. 接雨水 II
 
-**strong text**
+**给你一个 m x n 的矩阵，其中的值均为非负整数，代表二维高度图每个单元的高度，请计算图中形状最多能接多少体积的雨水。**
 
 
 #### 思路
 
+1. 设方块 (i,j)(i,j) 的最终的高度为 h[i][j]h[i][j]，那么 h[i][j] = max(heightMap[i][j], min(h[i-1][j], h[i+1][j], h[i][j-1], h[i][j +1]))h[i][j]=max(heightMap[i][j],min(h[i−1][j],h[i+1][j],h[i][j−1],h[i][j+1]))。
+
+2. 优先从矮的的方块开始找，一个格子周围有四个方块，但最终的盛水量，取决于最矮一个。
+   
+3. 计算完当前方块盛水量，要更新当前点的高度，h[i][j] = max(heightMap[i][j], min(h[i-1][j], h[i+1][j], h[i][j-1], h[i][j +1]))h[i][j]=max(heightMap[i][j],min(h[i−1][j],h[i+1][j],h[i][j−1],h[i][j+1]))。
 
 
 
@@ -1607,6 +1612,8 @@ class Solution:
 
 
 
+
+
 ***
 <br>
 
@@ -1614,10 +1621,25 @@ class Solution:
 
 ### 300. 最长上升子序列
 
-**strong text**
+**给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。**
 
 
-#### 思路
+#### 思路：动态规划{dp[i] = max(dp[i],dp[j]+1)}
+
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+
+        n = len(nums)
+        dp = [1 for i in range(n)]
+
+        for i in range(1,n):
+            for j in range(i):
+                if nums[i]>nums[j]:
+                    dp[i] = max(dp[i],dp[j]+1)
+
+        return max(dp)
+```
 
 
 
