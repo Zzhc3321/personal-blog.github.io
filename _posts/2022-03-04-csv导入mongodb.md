@@ -2,7 +2,7 @@
 layout: post
 title: 2022-03-04-csv导入mongodb 
 tags: [mongodb,csv]
-category: MongoDB
+category: 数据库
 toc: true
 math: true
 author: zzhc
