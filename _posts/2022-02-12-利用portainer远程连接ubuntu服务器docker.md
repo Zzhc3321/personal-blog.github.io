@@ -50,9 +50,9 @@ firewall-cmd --reload
 ```
 
 #### 2.服务器安全组配置
-![enter description here](https://gitee.com/zzhc3321/personal-blog-drawing-bed/raw/master/personal-blog/2022_2_12_关联组.jpeg)
+![enter description here](http://img.zzhc321.xyz/blog/2022_2_12_关联组.jpeg)
 
-![enter description here](https://gitee.com/zzhc3321/personal-blog-drawing-bed/raw/master/personal-blog/2022_2_12_安全组.jpeg)
+![enter description here](http://img.zzhc321.xyz/blog/2022_2_12_安全组.jpeg)
 
 ***
 
@@ -61,6 +61,6 @@ firewall-cmd --reload
 
 ### 三.portainer连接
 
-![enter description here](https://gitee.com/zzhc3321/personal-blog-drawing-bed/raw/master/personal-blog/2022_2_12_配置连接.jpeg)
+![enter description here](http://img.zzhc321.xyz/blog/2022_2_12_配置连接.jpeg)
 
-![enter description here](https://gitee.com/zzhc3321/personal-blog-drawing-bed/raw/master/personal-blog/2022_2_12_配置连接2.jpeg)
+![enter description here](http://img.zzhc321.xyz/blog/2022_2_12_配置连接2.jpeg)
