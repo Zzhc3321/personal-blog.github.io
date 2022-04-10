@@ -10,7 +10,6 @@ author: zzhc
 
 
 1. 下载并安装MySQL官方的 Yum Repository
-
 ```shell
 [root@localhost ~]# wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
 ```
@@ -30,20 +29,17 @@ author: zzhc
 
 
 4. **注意** Mysql安装失败-GPG验证不通过或Failed to start mariadb.service: Unit not fou
- 
 ```shell
 yum install mysql-community-server --nogpgcheck
 ```
 
 5. 启动MySQL
-   
 ```shell
 systemctl start  mysqld.service
 ```
 
 
 6. 查看MySQL运行状态
-
 ```shell
 systemctl status mysqld.service
 ```
@@ -55,7 +51,6 @@ systemctl status mysqld.service
 
 
 7. 配置密码
-
 ```shell
 grep "password" /var/log/mysqld.log
 
@@ -65,7 +60,6 @@ mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';
 ```
 
 8. 开启远程访问
-
 ```shell
 
 grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;
@@ -77,7 +71,6 @@ mysql> exit
 ```
 
 9. 开启防火墙开放端口
-
 ```shell
 [root@localhost ~]# firewall-cmd --zone=public --add-port=3306/tcp --permanent
 
@@ -87,7 +80,6 @@ mysql> exit
 ```
 
 10. 更改mysql语言为utf8
-
 ```shell
 首先重新登录mysql，然后输入status：
 
