@@ -34,3 +34,66 @@ author: zzhc
 ```shell
 yum install mysql-community-server --nogpgcheck
 ```
+
+5. 启动MySQL
+   
+```shell
+systemctl start  mysqld.service
+```
+
+
+6. 查看MySQL运行状态
+
+```shell
+systemctl status mysqld.service
+```
+
+
+
+
+
+
+
+7. 配置密码
+
+```shell
+grep "password" /var/log/mysqld.log
+
+mysql -uroot -p
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';
+```
+
+8. 开启远程访问
+
+```shell
+
+grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;
+
+mysql> flush privileges; 
+
+mysql> exit
+
+```
+
+9. 开启防火墙开放端口
+
+```shell
+[root@localhost ~]# firewall-cmd --zone=public --add-port=3306/tcp --permanent
+
+# 然后再重新载入
+[root@localhost ~]# firewall-cmd --reload
+
+```
+
+10. 更改mysql语言为utf8
+
+```shell
+首先重新登录mysql，然后输入status：
+
+先退出mysql，然后再到、etc目录下的my.cnf文件下修改一下文件内容
+
+character-set-server=utf8
+collation-server=utf8_general_ci
+
+```
