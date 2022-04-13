@@ -2,7 +2,7 @@
 layout: post
 title: 2022-03-13-windows debug环境下运行celery worker
 tags: [服务器,celery]
-category: 服务器
+category: Backend
 toc: true
 math: true
 author: zzhc
