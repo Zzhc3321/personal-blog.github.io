@@ -2,7 +2,7 @@
 layout: post
 title: 2022-04-10-centos服务器安装mysql
 tags: [数据库,mysql]
-category: 服务器
+category: Backend
 toc: true
 math: true
 author: zzhc
