@@ -2,7 +2,7 @@
 layout: post
 title: 2022-03-13-supervisor配置 
 tags: [supervisor,分布式]
-category: 服务器
+category: Backend
 toc: true
 math: true
 author: zzhc
