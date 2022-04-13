@@ -2,7 +2,7 @@
 layout: post
 title: 2022-02-12-利用portainer远程连接ubuntu服务器docker
 tags: [docker,服务器]
-category: docker
+category: Backend
 toc: true
 math: true
 author: zzhc
