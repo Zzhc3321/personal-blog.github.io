@@ -41,5 +41,16 @@ class ExportExcelMixin(object):
         wb.save(response)
         return response
     export_as_excel.short_description = '导出Excel'
+    
+class D_data_Admin(admin.ModelAdmin, ExportExcelMixin):
+    list_display = ('date', 'high', 'low', 'avg', 'pre_close', 'code')
+    actions_on_top = True
+    actions_on_bottom = True
+    list_filter = ['date']
+    actions = ['export_as_excel']
+    
+admin.site.register(daily_data_2, D_data_Admin)
+
 
 ```
+
