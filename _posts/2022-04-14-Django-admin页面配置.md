@@ -51,6 +51,5 @@ class D_data_Admin(admin.ModelAdmin, ExportExcelMixin):
     
 admin.site.register(daily_data_2, D_data_Admin)
 
-
 ```
 
