@@ -110,3 +110,29 @@ systemctl enable nginx.service
  - 日志文件存放在/var/log/nginx/
 
 ### 配置conf.d
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+***
+
+## 注意事项
+
+
+### 常用命令
+
+
+查看
+ps ajx|grep uwsgi
+
+
+
+### 关于静态文件权限
