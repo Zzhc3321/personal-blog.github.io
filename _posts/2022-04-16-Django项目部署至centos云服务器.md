@@ -64,17 +64,17 @@ daemonize=uwsgi.log
 ```
 
 ### uwsgi常用命令
- uwsgi.ini
+
+```shell
 启动：
-
 uwsgi  --ini  uwsgi.ini
+
 停止：
-
 uwsgi --stop uwsgi.pid
-重启：（当然是启动的时候重启啦啊）
 
+重启：
 uwsgi --reload uwsgi.pid
-
+```
 
 
 
