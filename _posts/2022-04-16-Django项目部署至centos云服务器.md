@@ -40,7 +40,7 @@ python manage.py check --deploy
 
 ## uwsgi
 
-### 安装
+### 安装配置
 ```shell
 pip3 install uwsgi
 ```
@@ -63,6 +63,7 @@ pidfile=uwsgi.pid
 daemonize=uwsgi.log
 ```
 
+### uwsgi常用命令
  uwsgi.ini
 启动：
 
