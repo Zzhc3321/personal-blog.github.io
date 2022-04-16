@@ -111,7 +111,17 @@ systemctl enable nginx.service
 
 ### 配置conf.d
 
-
+```shell
+location /static {
+            alias /home/xxx/static;
+        }
+location / {
+            #将所有的参数转到uwsgi下
+            include uwsgi_params;
+            #uwsgi的ip与端口
+            uwsgi_pass 127.0.0.1:8080;
+        }
+```
 
 
 
