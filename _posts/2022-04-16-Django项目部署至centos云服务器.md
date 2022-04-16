@@ -16,6 +16,12 @@ DEBUG = False
 ALLOW_HOSTS=['*',]
 ```
 
+```shell
+pip freeze > plist.txt
+
+pip install -r plist.txt
+```
+
 将项目文件放入服务器/home目录下
 
 <br>
