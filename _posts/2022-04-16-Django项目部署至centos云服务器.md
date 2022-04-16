@@ -40,8 +40,27 @@ python manage.py check --deploy
 
 ## uwsgi
 
+### 安装
 ```shell
 pip3 install uwsgi
+```
+
+uwsgi.ini：
+
+```shell
+[uwsgi]
+socket=127.0.0.1:8080
+
+#项目目录
+chdir=/home/xxx
+
+#项目中wsgi.py文件的目录，相对于项目目录
+wsgi-file=xxx/wsgi.py
+processes=4
+threads=2
+master=True
+pidfile=uwsgi.pid
+daemonize=uwsgi.log
 ```
 
  uwsgi.ini
