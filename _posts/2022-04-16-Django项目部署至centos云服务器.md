@@ -105,12 +105,8 @@ systemctl enable nginx.service
 
 <i class="fas fa-exclamation"></i>注：nginx的配置文件在<code>/etc/nginx/nginx.conf，目录在/etc/nginx </code>
 
-在这里插入图片描述
+ - 自定义的配置文件放在/etc/nginx/conf.d
+ - 项目文件存放在/usr/share/nginx/html/
+ - 日志文件存放在/var/log/nginx/
 
-
-在这里插入图片描述
-自定义的配置文件放在/etc/nginx/conf.d
-项目文件存放在/usr/share/nginx/html/
-日志文件存放在/var/log/nginx/
-还有一些其他的安装文件都在/etc/nginx
-安装完成之后就可以访问：
+### 配置conf.d
