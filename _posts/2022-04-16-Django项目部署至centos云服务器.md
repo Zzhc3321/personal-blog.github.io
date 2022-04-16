@@ -11,18 +11,27 @@ author: zzhc
 
 ## django 项目文件
 
+### 修改setting.py
 ```shell
 DEBUG = False
 ALLOW_HOSTS=['*',]
 ```
 
+### 服务器安装python依赖包
+
+将项目文件放入服务器/home目录下
 ```shell
 pip freeze > plist.txt
 
-pip install -r plist.txt
+pip3 install -r plist.txt
 ```
 
-将项目文件放入服务器/home目录下
+测试部署环境
+```shell
+python manage.py check --deploy
+```
+
+
 
 <br>
 <br>
