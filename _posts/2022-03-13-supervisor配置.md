@@ -26,7 +26,7 @@ echo_supervisord_conf > /etc/supervisor/supervisord.conf
 ```
 
 #### 3. 配置管理进程
-&emps;&emps进程管理配置参数，不建议全都写在supervisord.conf文件中，可以将每个进程写一个配置文件放在include指定的目录下包含进supervisord.conf文件中。类似nginx的配置文件。
+&emsp;&emsp;进程管理配置参数，不建议全都写在supervisord.conf文件中，可以将每个进程写一个配置文件放在include指定的目录下包含进supervisord.conf文件中。类似nginx的配置文件。
 
 
 - （1）创建/etc/supervisor/config.d目录，用于存放进程管理的配置文件。（此处目录可自定义，与配置文件中对应即可）
