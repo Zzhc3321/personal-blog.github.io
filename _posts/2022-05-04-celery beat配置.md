@@ -23,3 +23,11 @@ INSTALLED_APPS = [
     ...
 ]
 ```
+
+
+
+#### 启动任务
+
+```shell
+celery -A celery_demo worker -l info --beat
+```
