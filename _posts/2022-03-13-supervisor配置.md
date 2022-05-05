@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2022-03-13-supervisor配置 
+title: 2022-03-13-celery 和 supervisor配置 
 tags: [supervisor,分布式]
 category: Backend
 toc: true
