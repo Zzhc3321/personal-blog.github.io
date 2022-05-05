@@ -47,7 +47,7 @@ CELERY_ROUTES = {
 celery -A Graduation_design worker -l info -P eventlet -n worker_csv -c 10 -Q update_minute_data
 ```
 celery -A Graduation_design beat -l info
-
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
  # 服务器启动celery
 celery multi start -A celery_tasks.main worker  -l info  --logfile=celery.log --pidfile=celery.pid
