@@ -44,7 +44,7 @@ CELERY_ROUTES = {
 3. 启动worker时指定该worker执行哪一个queue中的任务
   
 ```shell
-celery -A Graduation_design worker -l info -n worker1 -Q update_csv_data
+celery -A Graduation_design worker -l info -P eventlet -n worker_csv -c 10 -Q update_minute_csv
 ```
 celery -A Graduation_design beat -l info
 
