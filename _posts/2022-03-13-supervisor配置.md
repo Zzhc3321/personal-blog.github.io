@@ -10,7 +10,8 @@ author: zzhc
 
 ## celery(beat)配置queue和routes
 
-
+时区问题：
+DJANGO_CELERY_BEAT_TZ_AWARE = False
 1. 手动定义queue
 
 
