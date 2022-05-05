@@ -23,16 +23,29 @@ CELERY_QUEUES = (
 ```
 
 
+2. 定义routes
 
 
 
+```python
+CELERY_ROUTES = {
+    'charts.tasks.update_daily_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
+    'charts.tasks.update_minute_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
+    'CSI.tasks.update_CSI_daily_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
+    'CSI.tasks.update_CSI_minute_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
+    'forecast.tasks.update_daily_csv': {'queue': 'update_csv_data', 'routing_key': 'update_csv_data'},
+    'forecast.tasks.update_minute_csv': {'queue': 'update_csv_data', 'routing_key': 'update_csv_data'},
+}
+```
 
 
 
-
-
-
-
+3. 启动worker时指定该worker执行哪一个queue中的任务
+  
+```shell
+celery -A charts worker -l info -Q update_sql_data -P eventlet
+celery -A CSI worker -l info -Q update_sql_data -P eventlet
+```
 
 
 
