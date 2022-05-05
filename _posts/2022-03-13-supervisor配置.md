@@ -8,6 +8,41 @@ math: true
 author: zzhc
 ---
 
+## celery(beat)配置queue和routes
+
+
+1. 手动定义queue
+
+
+```python
+CELERY_QUEUES = (
+    Queue('default',exchange=Exchange('default'),routing_key='default'),
+    Queue('update_sql_data',exchange=Exchange('update_sql_data'),routing_key='update_sql_data'),
+    Queue('update_csv_data',exchange=Exchange('update_csv_data'),routing_key='update_csv_data'),
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+***
 
 #### 1. 安装supervisor
 
