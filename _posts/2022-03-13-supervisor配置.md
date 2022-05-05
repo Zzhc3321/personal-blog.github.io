@@ -45,7 +45,7 @@ CELERY_ROUTES = {
 ```shell
 celery -A Graduation_design  worker -l info -n workerA.%h -Q update_csv_data
 ```
-
+celery -A Graduation_design beat -l info
 
 
 
