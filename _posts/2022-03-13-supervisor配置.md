@@ -48,7 +48,8 @@ celery -A Graduation_design worker -l info -n worker1 -Q update_csv_data
 celery -A Graduation_design beat -l info
 
 
-
+ # 服务器启动celery
+celery multi start -A celery_tasks.main worker  -l info  --logfile=celery.log --pidfile=celery.pid
 
 
 <br>
