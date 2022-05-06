@@ -10,8 +10,6 @@ author: zzhc
 
 ## celery(beat)配置queue和routes
 
-时区问题：
-DJANGO_CELERY_BEAT_TZ_AWARE = False
 1. 手动定义queue
 
 
@@ -44,14 +42,18 @@ CELERY_ROUTES = {
 3. 启动worker时指定该worker执行哪一个queue中的任务
   
 ```shell
+
+# worker
 celery -A Graduation_design worker -l info -P eventlet -n worker_csv -c 10 -Q update_minute_data
 
+# beat
 celery -A Graduation_design beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
 ```
 
+<i class="fas fa-exclamation">注意事项</i>
 
- # 服务器启动celery
-celery multi start -A celery_tasks.main worker  -l info  --logfile=celery.log --pidfile=celery.pid
+时区问题：
+DJANGO_CELERY_BEAT_TZ_AWARE = False
 
 
 <br>
