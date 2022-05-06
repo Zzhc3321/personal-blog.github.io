@@ -28,12 +28,8 @@ CELERY_QUEUES = (
 
 ```python
 CELERY_ROUTES = {
-    'charts.tasks.update_daily_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
-    'charts.tasks.update_minute_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
-    'CSI.tasks.update_CSI_daily_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
-    'CSI.tasks.update_CSI_minute_data': {'queue': 'update_sql_data', 'routing_key': 'update_sql_data'},
-    'forecast.tasks.update_daily_csv': {'queue': 'update_csv_data', 'routing_key': 'update_csv_data'},
-    'forecast.tasks.update_minute_csv': {'queue': 'update_csv_data', 'routing_key': 'update_csv_data'},
+    'forecast.tasks.update_daily_data': {'queue': 'update_daily_data', 'routing_key': 'update_daily_data'},
+    'forecast.tasks.update_minute_data': {'queue': 'update_minute_data', 'routing_key': 'update_minute_data'},
 }
 ```
 
