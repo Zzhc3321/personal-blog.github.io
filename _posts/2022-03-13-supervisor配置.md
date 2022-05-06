@@ -128,6 +128,12 @@ priority=998                   ;优先级
 supervisord -c conf/supervisord.conf 
 ```
 
+然后使用supervisorctl管理进程
+```shell
+supervisorctl 
+```
+
+
 ### 5. supervisor命令
 ```python
 #启动supervisor，-c制定让其读取的配置文件
