@@ -103,7 +103,7 @@ minprocs=200                 ; min. avail process descriptors;default 200
 ...
 
 添加：
-files = /etc/supervisor/supervisord.conf.d/*.conf
+files = /etc/supervisor/config.d/*.ini
 ```
 
 
