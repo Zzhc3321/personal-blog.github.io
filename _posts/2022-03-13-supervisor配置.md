@@ -125,7 +125,7 @@ priority=998                   ;优先级
 #### 指定配置文件启动supervisor
 
 ```shell
-supervisord -c conf/supervisord.conf 
+supervisord -c etc/supervisor/supervisord.conf 
 ```
 
 然后使用supervisorctl管理进程
