@@ -101,6 +101,9 @@ minprocs=200                 ; min. avail process descriptors;default 200
 ; RPC (supervisorctl/web interface) to work.  Additional interfaces may be
 ; added by defining them in separate [rpcinterface:x] sections.
 ...
+
+添加：
+files = /etc/supervisor/supervisord.conf.d/*.conf
 ```
 
 
@@ -125,7 +128,7 @@ priority=998                   ;优先级
 #### 指定配置文件启动supervisor
 
 ```shell
-supervisord -c etc/supervisor/supervisord.conf 
+supervisord -c /etc/supervisor/supervisord.conf 
 ```
 
 然后使用supervisorctl管理进程
@@ -135,7 +138,7 @@ supervisorctl
 
 
 ### 5. supervisor命令
-```python
+```shell
 #启动supervisor，-c制定让其读取的配置文件
 supervisord -c /etc/supervisor/supervisord.conf
 
