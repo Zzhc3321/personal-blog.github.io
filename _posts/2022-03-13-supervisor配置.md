@@ -120,9 +120,13 @@ startsecs=10
 stopwaitsecs=60
 priority=998                   ;优先级
 ```
-#### 为celery beat配置进程
 
 
+#### 指定配置文件启动supervisor
+
+```shell
+supervisord -c conf/supervisord.conf 
+```
 
 ### 5. supervisor命令
 ```python
