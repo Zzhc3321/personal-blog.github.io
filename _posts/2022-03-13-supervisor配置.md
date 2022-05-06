@@ -15,9 +15,9 @@ author: zzhc
 
 ```python
 CELERY_QUEUES = (
-    Queue('default',exchange=Exchange('default'),routing_key='default'),
-    Queue('update_sql_data',exchange=Exchange('update_sql_data'),routing_key='update_sql_data'),
-    Queue('update_csv_data',exchange=Exchange('update_csv_data'),routing_key='update_csv_data'),
+    Queue('default', exchange=Exchange('default'), routing_key='default'),
+    Queue('update_minute_data', exchange=Exchange('update_minute_data'), routing_key='update_minute_data'),
+    Queue('update_daily_data', exchange=Exchange('update_daily_data'), routing_key='update_daily_data'),
 )
 ```
 
