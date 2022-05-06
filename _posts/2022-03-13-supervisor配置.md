@@ -251,7 +251,24 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 ```
 
 
-### 4.
+### 4. 进程配置
+#### 为celery worker配置进程
+在conf目录下创建supervisor_celery_worker.ini文件
+```shell
+[program:ice-celery-worker]
+command=python manage.py celery worker -l INFO   ;启动命令
+director=/root/cel/celery_demo                   ;指定工作目录，即manage.py所在的目录
+environment=PATH="/root/.local/share/virtualenvs/cel-l64ISTw0/bin/" ;指定环境目录
+stdout_logfile=/root/cel/celery_demo/logs/celery.worker.log    ;指定日志文件
+stdeer_logfile=/root/cel/celery_demo/logs/celery.worker.log    ;错误日志文件
+autostart=true                 ;自动启动
+autorestart=true               ;自动重启
+startsecs=10
+stopwaitsecs=60
+priority=998                   ;优先级
+```
+#### 为celery beat配置进程
+
 
 
 ### 5. supervisor命令
