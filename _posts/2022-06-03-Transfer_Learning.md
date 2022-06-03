@@ -18,7 +18,7 @@ author: 知乎：王晋东不在家
 
 
 
-## 迁移成分分析(TCA)方法简介
+## 迁移成分分析(TCA)
 
 &emsp;&emsp;迁移成分分析（TCA，transfer component analysis）通过降维来达到数据维度减少，而且能达到迁移学习目的。
 
@@ -52,3 +52,5 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
 ## 联合分布适配(JDA)
 
 &emsp;&emsp;简单概括就是用有标注的源域数据来标定完全无标注的目标域。JDA方法就是要适配源域和目标域的联合概率。
+
+### 假设
