@@ -36,7 +36,9 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
 
 ### 求解
 
+![enter description here](http://img.zzhc321.xyz/blog/1654242720190.png)
+
 
 ### 总结
-
+输入是两个特征矩阵，我们首先计算L和H矩阵，然后选择一些常用的核函数进行映射（比如线性核、高斯核）计算K，接着求![\[公式\]](http://img.zzhc321.xyz/blog/1654242760400.png)的前m个特征值。然后，得到的就是源域和目标域的降维后的数据，我们就可以在上面用传统机器学习方法了。
 
