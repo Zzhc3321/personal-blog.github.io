@@ -65,3 +65,12 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
  1. 边缘分布适配：其实这个操作就是迁移成分分析（TCA）。我们仍然使用MMD距离来最小化源域和目标域的最大均值差异。
 
  2. 条件分布适配：我们依然没有/y_t。采用的方法是，用(X_s,Y_s)来训练一个简单的分类器（比如knn、逻辑斯特回归），到/X_t上直接进行预测。我们根据伪标签来计算。
+
+
+### 学习策略
+
+把两个距离结合起来，得到了一个总的优化目标：
+![enter description here](http://img.zzhc321.xyz/blog/1654245231211.png)
+
+
+![enter description here](http://img.zzhc321.xyz/blog/1654245244465.png)是正则项
