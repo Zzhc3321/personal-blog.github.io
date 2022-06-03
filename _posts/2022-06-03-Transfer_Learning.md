@@ -74,3 +74,10 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
 
 
 ![enter description here](http://img.zzhc321.xyz/blog/1654245244465.png)是正则项
+
+
+### 总结
+&emsp;&emsp;JDA方法比较巧妙，同时适配两个分布，然后非常精巧地规到了一个优化目标里。用弱分类器迭代，最后达到了很好的效果，值得我们去学习。和TCA的主要区别有两点：
+
+ - 1）TCA是无监督的（边缘分布适配不需要label），JDA需要源域有label；
+ - 2）TCA不需要迭代，JDA需要迭代。
