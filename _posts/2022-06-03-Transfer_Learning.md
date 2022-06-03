@@ -8,7 +8,15 @@ math: true
 author: 知乎：王晋东不在家
 ---
 
+
 《小王爱迁移》系列
+
+一些缺乏的知识点
+
+ - maximum mean discrepancy
+ - 核函数（核技巧）
+
+
 
 ## 迁移成分分析(TCA)方法简介
 
@@ -30,3 +38,5 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
 
 
 ### 总结
+
+
