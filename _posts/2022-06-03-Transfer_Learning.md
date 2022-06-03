@@ -54,3 +54,8 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
 &emsp;&emsp;简单概括就是用有标注的源域数据来标定完全无标注的目标域。JDA方法就是要适配源域和目标域的联合概率。
 
 ### 假设
+
+ - 源域和目标域边缘分布不同
+ - 源域和目标域条件分布不同
+
+&emsp;&emsp;JDA方法的目标就是，寻找一个变换![\[公式\]](http://img.zzhc321.xyz/blog/1654244928638.png)，使得经过变换后的![\[公式\]](http://img.zzhc321.xyz/blog/1654244941968.png) 和 ![\[公式\]](http://img.zzhc321.xyz/blog/1654244954250.png)的距离能够尽可能地接近，同时，![\[公式\]](http://img.zzhc321.xyz/blog/1654244959949.png)和![\[公式\]](http://img.zzhc321.xyz/blog/1654244965290.png)的距离也要小。
