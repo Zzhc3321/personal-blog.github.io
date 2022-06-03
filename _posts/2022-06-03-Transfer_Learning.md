@@ -81,3 +81,17 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
 
  - 1）TCA是无监督的（边缘分布适配不需要label），JDA需要源域有label；
  - 2）TCA不需要迭代，JDA需要迭代。
+
+
+
+<br>
+
+<br>
+
+***
+
+## 深度神经网络的可迁移性
+
+![enter description here](http://img.zzhc321.xyz/blog/1654247275145.png)
+
+&emsp;&emsp;随着可迁移层数的增加，模型性能下降。但是，前3层仍然还是可以迁移的！同时，与随机初始化所有权重比较，迁移学习的精度是很高的!
