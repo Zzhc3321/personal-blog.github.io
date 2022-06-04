@@ -180,3 +180,25 @@ GFK（Geodesic flowkernel）方法首先解决SGF的问题：
 
 
 **测地线：**两点之间，测地线最短。在流形学习中，我们遇到测量距离的时候，更多的时候用的就是这个测地线。
+
+
+### 方法
+
+ 1. 选择最优的子空间维度：subspace disagreement measure（SDM），翻译过来就是子空间不一致度量。这个度量可以反映出两个domain在多少维的子空间下能够保持最大一致性。
+
+ 2. 构建测地线流
+    
+ 3. 测地线流kernel
+
+ 3. Rank of Domain：用一个KL散度
+
+<br>
+<br>
+
+***
+
+## 从经验中学习迁移
+
+### 背景
+
+Learning To Transfer -> 类似learn to learn
