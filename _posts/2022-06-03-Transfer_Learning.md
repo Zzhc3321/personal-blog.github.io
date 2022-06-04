@@ -239,3 +239,11 @@ Learning To Transfer -> 类似learn to learn
 &emsp;&emsp;如果两个领域之间不存在，或者基本不相似，可以说出现了负迁移（negative transfer）
 
 >负迁移指的是，在源域上学习到的知识，对于目标域上的学习产生负面作用。
+
+&emsp;&emsp;在实际应用中，找到合理的相似性，并且选择或开发合理的迁移学习方法，能够避免负迁移现象。
+
+
+&emsp;&emsp;传统迁移学习只有两个领域足够相似才可以完成，而当两个领域不相似时，传递迁移学习却可以利用处于这两个领域之间的若干领域，将知识传递式的完成迁移。
+
+
+![enter description here](http://img.zzhc321.xyz/blog/1654314015606.png)
