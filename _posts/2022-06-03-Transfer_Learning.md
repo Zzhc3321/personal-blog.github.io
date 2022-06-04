@@ -103,3 +103,35 @@ TCA利用的距离叫做最大均值差异（MMD，maximum mean discrepancy）�
  - Fine-tune可以比较好地克服数据之间的差异性；
  - 深度迁移网络要比随机初始化权重效果好；
  - 网络层数的迁移可以加速网络的学习和优化。
+
+<br>
+<br>
+
+***
+
+
+## 深度迁移网络
+
+### DaNN
+&emsp;&emsp;（Domain Adaptive Neural Network）的神经网络。DaNN的结构异常简单，它仅由两层神经元组成：特征层和分类器层。
+
+
+### DDC
+&emsp;&emsp;DDC针对预训练的AlexNet（8层）网络，在第7层（也就是feature层，softmax的上一层）加入了MMD距离来减小source和target之间的差异。这个方法简称为DDC。
+
+![enter description here](http://img.zzhc321.xyz/blog/1654309924634.png)
+
+
+### DAN
+DAN相比DDC加了2点改进：
+
+ - 一是多适配了几层特征
+ - 二是采用了之前Arthur Gretton提出的多核MMD替换掉原有的单核MMD
+
+
+&emsp;&emsp;原来的MMD是要把source和target用一个相同的映射映射在一个再生核希尔伯特空间（RKHS）中，然后求映射后两部分数据的均值差异，就当作是两部分数据的差异。最重要的一个概念是核，在MMD中这个核固定的，我们在实现的时候可以选择是高斯核还是线性核。这样的缺点是明显的：我怎么知道哪个核一定好？
+
+
+&emsp;&emsp;MK-MMD就是为了解决这个问题。它提出用多个核去构造这个总的核，对不同kernel进行加权求和，对于两个概率分布，它们的MK-MMD距离就是
+![enter description here](http://img.zzhc321.xyz/blog/1654310077820.png)
+![enter description here](http://img.zzhc321.xyz/blog/1654310091483.png)
