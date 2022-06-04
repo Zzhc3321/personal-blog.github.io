@@ -135,3 +135,32 @@ DAN相比DDC加了2点改进：
 &emsp;&emsp;MK-MMD就是为了解决这个问题。它提出用多个核去构造这个总的核，对不同kernel进行加权求和，对于两个概率分布，它们的MK-MMD距离就是
 ![enter description here](http://img.zzhc321.xyz/blog/1654310077820.png)
 ![enter description here](http://img.zzhc321.xyz/blog/1654310091483.png)
+
+&emsp;&emsp;DDC和DAN作为深度迁移学习的代表性方法，充分利用了深度网络的可迁移特性，然后又把统计学习中的MK-MMD距离引入，取得了很好的效果。
+
+
+
+
+
+
+
+<br>
+<br>
+
+***
+
+
+## 测地线流式核方法（GFK）
+
+
+&emsp;&emsp;GFK作为子空间变换方面最为经典的迁移学习方法
+
+
+
+
+
+
+
+
+
+
