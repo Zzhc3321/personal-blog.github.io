@@ -157,10 +157,26 @@ DAN相比DDC加了2点改进：
 
 
 
+### 背景
+
+&emsp;&emsp;GFK方法提出的目的也是为了解决迁移学习中的unsupervised domain adaptation问题：源域数据（source）和目标域数据（target）类别一样，但是特征服从不同的分布。源域数据全部有标注，目标域数据全部无标注。
+
+&emsp;&emsp;已有的方法大多都集中在特征变换上。就是说，通过一个特征映射，把source和target变换到一个公共空间上，在这个空间里，它们的距离是最小的（相似度最高）。这样就能用传统的机器学习方法进行分类了。
+
+&emsp;&emsp;SGF把source和target分别看成高维空间（Grassmann流形）中的两个点，在这两个点的测地线距离上取d个中间点，然后依次连接起来。这样，由source和target就构成了一条测地线的路径。我们只需要找到合适的每一步的变换，就能从source变换到target了。
 
 
+### 简介
 
 
+GFK（Geodesic flowkernel）方法首先解决SGF的问题：
+
+ - 如何确定source和target路径上中间点的个数。它通过提出一种kernel方法，利用路径上的所有点的积分，把这个问题解决了。
+ - 当有多个source的时候，我们如何决定使用哪个source跟target进行迁移？GFK通过提出Rank of Domain度量，度量出跟target最近的source，来解决这个问题。
+
+**流形学习：**它的基本假设是，现有的数据是从一个高维空间中采样出来的，所以，它具有高维空间中的低维流形结构。
+
+**格拉斯曼流形Grassmann manifold：**有一个n维的向量空间W，W中任意取k维子空间，就构成了Grassmann流形。
 
 
-
+**测地线：**两点之间，测地线最短。在流形学习中，我们遇到测量距离的时候，更多的时候用的就是这个测地线。
